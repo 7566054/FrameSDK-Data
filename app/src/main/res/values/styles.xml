@@ -85,7 +85,7 @@
         <item name="android:visibility">gone</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textSize">@dimen/text_14</item>
     </style>
 
     <style name="AnimHead" parent="@android:style/Animation">

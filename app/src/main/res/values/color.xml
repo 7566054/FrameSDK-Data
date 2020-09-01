@@ -57,7 +57,7 @@
     <color name="button_gray">#979797</color>
 
     <color name="list_selected_background">#ffd0d0d0</color>
-    <color name="list_header_background">#b6bec9</color>
+    <color name="list_header_background">#c1c1c1</color>
 
     <color name="spinner_bg">#ccb6bec9</color>
     <color name="divider">#dcdcdc</color>

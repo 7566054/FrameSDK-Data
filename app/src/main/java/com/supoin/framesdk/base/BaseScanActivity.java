@@ -72,6 +72,9 @@ public abstract class BaseScanActivity extends AppCompatActivity implements Scan
     @BindView(R2.id.tv_more)
     protected TextView tv_more;//更多按钮
 
+    @BindView(R2.id.lin_layout2)
+    protected LinearLayout lin_layout2;//第二个listview头部，如果设备tv_11到tv_15为可见，必须先设置lin_layout2为可见，lin_layout2默认是不可见的
+
     protected View viewCustom;//用户自定义控件视图
     //扫描工具
     protected ScanUtil scanOperate;
@@ -218,6 +221,13 @@ public abstract class BaseScanActivity extends AppCompatActivity implements Scan
         textView.setLayoutParams(params);
         textView.setText(getResources().getString(title));
         textView.setVisibility(View.VISIBLE);
+
+        if (lin_layout2.getVisibility() == View.GONE){
+            if(tv_id == R.id.tv_11 || tv_id == R.id.tv_12 || tv_id == R.id.tv_13 ||
+                    tv_id == R.id.tv_14 || tv_id == R.id.tv_15){
+                lin_layout2.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     public void setHeaderTitle(int tv_id, String title, float weight)
@@ -229,6 +239,13 @@ public abstract class BaseScanActivity extends AppCompatActivity implements Scan
         textView.setLayoutParams(params);
         textView.setText(title);
         textView.setVisibility(View.VISIBLE);
+
+        if (lin_layout2.getVisibility() == View.GONE){
+            if(tv_id == R.id.tv_11 || tv_id == R.id.tv_12 || tv_id == R.id.tv_13 ||
+                    tv_id == R.id.tv_14 || tv_id == R.id.tv_15){
+                lin_layout2.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     //页面暂停处理，主要释放扫描枪

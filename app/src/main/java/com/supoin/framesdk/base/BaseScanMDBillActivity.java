@@ -300,6 +300,14 @@ public abstract class BaseScanMDBillActivity extends AppCompatActivity implement
         textView.setLayoutParams(params);
         textView.setText(getResources().getString(title));
         textView.setVisibility(View.VISIBLE);
+
+        LinearLayout linearLayout2=(LinearLayout)viewDetail.findViewById(R.id.lin_layout2);
+        if (linearLayout2.getVisibility() == View.GONE){
+            if(tv_id == R.id.tv_11 || tv_id == R.id.tv_12 || tv_id == R.id.tv_13 ||
+                    tv_id == R.id.tv_14 || tv_id == R.id.tv_15){
+                linearLayout2.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     public void setHeaderTitle(int tv_id, String title, float weight)
@@ -311,6 +319,15 @@ public abstract class BaseScanMDBillActivity extends AppCompatActivity implement
         textView.setLayoutParams(params);
         textView.setText(title);
         textView.setVisibility(View.VISIBLE);
+
+        LinearLayout linearLayout2=(LinearLayout)viewDetail.findViewById(R.id.lin_layout2);
+        if (linearLayout2.getVisibility() == View.GONE){
+            if(tv_id == R.id.tv_11 || tv_id == R.id.tv_12 || tv_id == R.id.tv_13 ||
+                    tv_id == R.id.tv_14 || tv_id == R.id.tv_15){
+                linearLayout2.setVisibility(View.VISIBLE);
+            }
+        }
+
     }
 
     //页面暂停处理，主要释放扫描枪

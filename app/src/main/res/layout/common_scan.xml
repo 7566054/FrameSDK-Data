@@ -20,7 +20,7 @@
         />
 
     <LinearLayout
-        android:id="@+id/lin_layout"
+        android:id="@+id/lin_layout1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_height"
         android:layout_marginTop="10dp"
@@ -116,6 +116,65 @@
 
         <TextView
             android:id="@+id/tv_9"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            style="@style/ListView_Header_Grey" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        android:background="@color/list_header_background"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_11"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            style="@style/ListView_Header_Grey" />
+
+        <TextView
+            android:id="@+id/tv_12"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            style="@style/ListView_Header_Grey" />
+
+        <TextView
+            android:id="@+id/tv_13"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            style="@style/ListView_Header_Grey" />
+
+        <TextView
+            android:id="@+id/tv_14"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            style="@style/ListView_Header_Grey" />
+
+
+        <TextView
+            android:id="@+id/tv_15"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
