@@ -44,6 +44,7 @@ public class MyLogin extends FrameLoginActivity {
 
     @Override
     protected void initData() {
+        //设置用户名称
         editUser.setText("1111");
         editPassword.setText("2222");
     }
