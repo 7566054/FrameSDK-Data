@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+    <RelativeLayout
+        android:id="@+id/fl_inner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/header_footer_top_bottom_padding"
+        android:paddingTop="@dimen/header_footer_top_bottom_padding" >
+
+        <RelativeLayout
+            android:layout_width="@dimen/dimen_180"
+            android:layout_height="@dimen/dimen_40"
+            android:layout_centerHorizontal="true"
+            android:paddingRight="@dimen/dimen_140" >
+
+            <ImageView
+                android:id="@+id/pull_to_refresh_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40"
+                android:scaleType="centerInside" />
+
+            <com.supoin.framesdk.widget.CircleView
+                android:id="@+id/pull_to_refresh_image_l"
+                android:layout_width="@dimen/dimen_40"
+                android:layout_height="@dimen/dimen_40"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/pull_to_refresh_textlinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/pull_to_refresh_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dimen_20"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textColor="@color/theme_f0" />
+
+            <TextView
+                android:id="@+id/pull_to_refresh_sub_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dimen_20"
+                android:singleLine="true"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/theme_7f"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</merge>

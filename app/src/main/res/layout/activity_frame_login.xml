@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.supoin.framesdk.widget.SlidingMenu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sm_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/ll_homepage_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF" >
+
+                <include
+                    android:id="@+id/in_head"
+                    layout="@layout/titlebar_mainmenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="top"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:background="@mipmap/login_bg"
+                    android:layout_below="@+id/in_head"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/iv_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:src="@mipmap/company_log"
+                        android:layout_gravity="center"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="40dip"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/et_user_code"
+                            style="@style/EditText"
+                            android:drawableStart="@mipmap/ic_account"
+                            android:drawablePadding="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#F0FFFFFF"
+                            android:paddingStart="10dp"
+                            android:hint="@string/hint_user"
+                            android:imeOptions="actionDone"
+                            android:paddingEnd="@dimen/layout_margin"
+                            />
+
+                        <ImageView
+                            android:id="@+id/iv_user_his"
+                            android:layout_width="@dimen/dimen_50"
+                            android:layout_height="match_parent"
+                            android:layout_alignBottom="@id/et_user_code"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignTop="@id/et_user_code"
+                            android:paddingLeft="@dimen/dimen_15"
+                            android:paddingRight="@dimen/dimen_15"
+                            android:scaleType="centerInside"
+                            android:src="@mipmap/ic_arrow_down" />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dip"
+                        android:orientation="horizontal">
+                        <EditText
+                            android:id="@+id/et_pwd"
+                            style="@style/EditText"
+                            android:drawablePadding="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            android:imeOptions="actionDone"
+                            android:background="#F0FFFFFF"
+                            android:drawableStart="@mipmap/ic_password"
+                            android:drawableEnd="@mipmap/ic_password_hide"
+                            android:paddingEnd="@dimen/layout_margin"
+                            android:hint="@string/hint_password"
+                            android:inputType="textPassword" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/btn_login"
+                            style="@style/Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/login"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_main_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone" >
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</com.supoin.framesdk.widget.SlidingMenu>

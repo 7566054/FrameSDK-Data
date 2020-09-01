@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:apk="http://schemas.android.com/apk/res/android"
+    apk:oneshot="false" >
+
+    <item
+        apk:drawable="@drawable/preloader_2_00000"
+        apk:duration="80"/>
+    <item
+        apk:drawable="@drawable/preloader_2_00002"
+        apk:duration="80"/>
+    <item
+        apk:drawable="@drawable/preloader_2_00004"
+        apk:duration="80"/>
+    <item
+        apk:drawable="@drawable/preloader_2_00006"
+        apk:duration="80"/>
+    <item
+        apk:drawable="@drawable/preloader_2_00008"
+        apk:duration="80"/>
+    <item
+        apk:drawable="@drawable/preloader_2_00010"
+        apk:duration="80"/>
+    <item
+        apk:drawable="@drawable/preloader_2_00012"
+        apk:duration="80"/>
+    <item
+        apk:drawable="@drawable/preloader_2_00014"
+        apk:duration="80"/>
+
+</animation-list>

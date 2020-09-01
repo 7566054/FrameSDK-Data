@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/theme_bg"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/titlebar_list"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="top" />
+
+    <RelativeLayout
+        android:id="@+id/rl_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        />
+
+    <com.supoin.framesdk.widget.PullToRefreshListView
+        android:id="@+id/listview_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/transparent"
+        android:dividerHeight="0dip"
+        android:listSelector="@color/transparent"
+        android:padding="@dimen/dimen_5"
+        android:scrollbars="none"
+        app:ptrOverScroll="false" >
+    </com.supoin.framesdk.widget.PullToRefreshListView>
+
+    <LinearLayout
+        android:id="@+id/line_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_40"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bottom_btn_create"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            style="@style/Button"
+            android:layout_weight="1"
+            android:text="@string/list_new" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

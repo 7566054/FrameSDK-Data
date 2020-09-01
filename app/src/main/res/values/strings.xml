@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">通用框架</string>
+
+    <!-- 弹出窗体 -->
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="dialog_title">提示</string>
+
+    <!-- 登录 -->
+    <string name="login">登录</string>
+    <string name="setting">设置</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="hint_user">请输入用户名</string>
+    <string name="no_loginname_history">无历史登录名</string>
+    <string name="history_loginname">最近历史登录名</string>
+
+    <!-- 主界面 -->
+    <string name="menu_in">入库</string>
+    <string name="menu_out">出库</string>
+    <string name="menu_check">盘点</string>
+
+    <!-- 系统更新 -->
+    <string name="version_update">系统需要更新，是否现在更新？</string>
+    <string name="version_downloading">正在下载版本，请稍候</string>
+    <string name="version_network_timeout">联网超时</string>
+    <string name="version_fail_network">网络连接失败，您可继续尝试上报</string>
+    <string name="version_error">出错了:</string>
+    <string name="version_download_failed">下载失败</string>
+    <string name="version_error_reply_msg">解析服务端应答消息出错</string>
+
+    <!--  列表基类控件 -->
+    <string name="list_new">新建</string>
+    <string name="list_empty_data">暂无数据</string>
+    <string name="add">新增</string>
+
+    <!--  扫描基类控件 -->
+    <string name="title_1">标题1：</string>
+    <string name="title_2">标题2：</string>
+    <string name="btn_1">按钮1</string>
+    <string name="btn_2">按钮2</string>
+    <string name="btn_3">按钮3</string>
+    <string name="more">更多</string>
+    <string name="billno">单据</string>
+    <string name="detail">明细</string>
+
+    <!--注册-->
+    <string name="register_input">请输入注册码</string>
+    <string name="register_sucess">注册成功!</string>
+    <string name="register_fail">注册失败，请联系管理员!</string>
+    <string name="register_input_correct">请输入正确的注册码!</string>
+    <string name="register">注册</string>
+    <string name="register_device">设备号:</string>
+    <string name="register_pwd">注册码:</string>
+    <string name="register_solve">* 请将设备号告诉销邦客服人员</string>
+
+    <!-- FTP设置 -->
+    <string name="ftp_storage_warning">外部存储不可用.</string>
+    <string name="ftp_no_wifi_hint">无WiFi网络,点击以查看WiFi设置</string>
+    <string name="ftp_start_server">启动服务</string>
+    <string name="ftp_stop_server">停止服务</string>
+    <string name="ftp_no_wifi">无WiFi网络</string>
+    <string name="ftp_wifi_state">WLAN状态</string>
+    <string name="ftp_instruction_pre">启动后可以从电脑端远程获取盘点文件</string>
+    <string name="ftp_instruction">请在“我的电脑”地址栏中输入：</string>
+
+    <!-- 弹出对话框 -->
+    <string name="asking_for">正在请求</string>
+
+    <!-- 刷新控件 -->
+    <string name="pull_to_refresh_pull_label">下拉后刷新…</string>
+    <string name="pull_to_refresh_release_label">放开以刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">正在刷新中…</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">上拉加载更多…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">放开加载数据…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">正在加载数据…</string>
+    <string name="unknown_time">未知时间前</string>
+    <string name="just_now">刚刚</string>
+    <string name="second_ago">秒前</string>
+    <string name="min_ago">分钟前</string>
+    <string name="hour_ago">小时前</string>
+    <string name="day_ago">天前</string>
+
+    <string name="less_than_1KB">小于1KB</string>
+
+</resources>

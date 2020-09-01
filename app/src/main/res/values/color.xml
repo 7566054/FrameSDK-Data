@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <color name="theme_bg">#F1F1F1</color>
+    <color name="theme">#475063</color>
+    <color name="theme_f0">#F0475063</color>
+    <color name="theme_8f">#8F475063</color>
+    <color name="theme_7f">#7F475063</color>
+    <color name="theme_60">#60475063</color>
+    <color name="theme_40">#40475063</color>
+    <color name="theme_30">#30475063</color>
+    <color name="theme_20">#20475063</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_7f">#7fffffff</color>
+    <color name="blue">#2FB3FF</color>
+    <color name="blue_light">#D5F0FF</color>
+    <color name="blue_light_cc">#ccD5F0FF</color>
+    <color name="cyan">#157be0</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="red_90">#90ff354c</color>
+    <color name="orange">#fc8035</color>
+    <color name="grey_light">#ffd3d3d3</color>
+    <color name="grey">#ff606060</color>
+    <color name="grey_white">#EBEBEB</color>
+    <color name="grey_holo_dark">#ff464646</color>
+    <color name="grey_holo_light">#ffd0d0d0</color>
+    <color name="white_gray">#aededf</color>
+
+    <!-- 50% 灰色透明 -->
+    <color name="gray_font_7f">#7f818181</color>
+    <color name="gray_bg">#eeeeee</color>
+    <color name="gray_separate">#e2e2e2</color>
+    <color name="black_my_font">#444444</color>
+    <color name="gray_my_font">#666666</color>
+    <color name="gray_c1c1c1">#c1c1c1</color>
+    <color name="gray_f7f7f7">#f7f7f7</color>
+    <color name="gray_line">#dfdfdf</color>
+
+
+    <color name="text_grey">#979797</color>
+    <color name="text_grey_light">#e1e1e1</color>
+    <color name="text_gray_mid">#979797</color>
+    <color name="text_blue">#3A74D9</color>
+    <color name="text_red">#872C2C</color>
+
+    <color name="menu_back">#5ab6e7</color>
+
+    <color name="button_dark">#2864A9</color>
+    <color name="button_yellow">#fcaf35</color>
+    <color name="button_orange">#fc8035</color>
+    <color name="button_red">#ff4400</color>
+    <color name="button_green">#01c676</color>
+    <color name="button_blue">#FF065E8D</color>
+    <color name="button_gray">#979797</color>
+
+    <color name="list_selected_background">#ffd0d0d0</color>
+    <color name="list_header_background">#b6bec9</color>
+
+    <color name="spinner_bg">#ccb6bec9</color>
+    <color name="divider">#dcdcdc</color>
+
+</resources>
