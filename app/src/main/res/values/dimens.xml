@@ -1,7 +1,7 @@
 <resources>
 
     <dimen name="layout_margin">10dp</dimen>
-    <dimen name="layout_height">30dp</dimen>
+    <dimen name="layout_height">40dp</dimen>
 
     <dimen name="dimen_0_5">0.5dp</dimen>
     <dimen name="dimen_1">1dp</dimen>
