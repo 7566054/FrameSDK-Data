@@ -244,49 +244,66 @@ public class OKClientUtil {
     }
 
     /**
-     * 下载文件 以流的形式把apk写入的指定文件 得到file后进行安装
-     * 参数一：请求Url
-     * 参数二：保存文件的路径名
-     * 参数三：保存文件的文件名
+     * @param url 下载连接
+     * @param saveFileName 储存下载文件的SDCard目录
+     * @param listener 下载监听
      */
-    public void downLoadFile(final Context context, final String url, final String saveDir) {
+    public String downLoadFile(final String url, final String saveFileName, final OnDownloadFileListener listener) {
         Request request = new Request.Builder().url(url).build();
-        Call call = getOkHttpClient().newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("lu", "下载失败： "+e.toString());
+        // 异步请求
+        Response response = null;
+        InputStream is = null;
+        byte[] buf = new byte[1024];
+        int len = 0;
+        FileOutputStream fos = null;
+        try {
+            response = getOkHttpClient().newCall(request).execute();
+
+            if (response.isSuccessful()) {
+
+                File file = new File(saveFileName);
+                if (!file.getParentFile().exists()) {
+                    file.getParentFile().mkdirs();
+                }
+
+                is = response.body().byteStream();
+                fos = new FileOutputStream(file);
+                int size = 0;
+                long total = response.body().contentLength();
+                while ((size = is.read(buf)) != -1) {
+                    len += size;
+                    fos.write(buf, 0, size);
+
+                    listener.onDownloading(len, total);
+                }
+                fos.flush();
+
+                return "OK";
+            } else {
+                return response.message();
             }
-
-            @Override
-            public void onResponse(Call call, final Response response) throws IOException {
-
-                InputStream is = null;
-                byte[] buf = new byte[1024];
-                int len = 0;
-                FileOutputStream fos = null;
+        } catch (IOException ex) {
+            return ex.getMessage();
+        } finally {
+            if (is != null) {
                 try {
-                    is = response.body().byteStream();
-                    //保存路径
-                    FileUtils.createOrExistsDir(saveDir);
-                    final String fileDir =saveDir;
-
-                    //文件
-                    File file = new File(fileDir, CommUtil.getInstance().getNameFromUrl(url));
-                    fos = new FileOutputStream(file);
-                    while ((len = is.read(buf)) != -1) {
-                        fos.write(buf, 0, len);
-                    }
-                    fos.flush();
+                    is.close();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Log.e("lu", "下载失败： "+e.toString());
-                } finally {
-                    if (is != null) is.close();
-                    if (fos != null) fos.close();
                 }
             }
-        });
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
+        }
+    }
+
+    public interface OnDownloadFileListener {
+        void onDownloading(int downloadedSize, long fileSize);
     }
 }
