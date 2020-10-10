@@ -264,10 +264,10 @@ public abstract class FrameLoginActivity extends BaseActivity {
     @OnClick(R2.id.btn_login)
     public void onClickLogin(){
 
-        if (!Build.MANUFACTURER.equals("SUPOIN")){
-            ToastUtils.showShort("机器不合法，请使用销邦设备！");
-            return;
-        }
+//        if (!Build.MANUFACTURER.equals("SUPOIN")){
+//            ToastUtils.showShort("机器不合法，请使用销邦设备！");
+//            return;
+//        }
         if (!NetworkUtils.isConnected()){
             ToastUtils.showShort("您的网络有问题，请检查网络连接！");
             return;
