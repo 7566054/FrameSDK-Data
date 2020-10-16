@@ -8,7 +8,7 @@ import com.supoin.framesdk.base.BaseMainActivity;
 public class MyMain extends BaseMainActivity {
     @Override
     public void onJumptoActivity() {
-        ActivityUtils.startActivity(MyScanMD.class);
+        ActivityUtils.startActivity(MyLogin.class);
     }
 
     @Override
