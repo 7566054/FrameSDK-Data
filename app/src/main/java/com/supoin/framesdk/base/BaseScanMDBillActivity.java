@@ -26,6 +26,7 @@ import com.supoin.framesdk.ui.adapter.AdapterPager;
 import com.supoin.framesdk.utils.CommUtil;
 import com.supoin.framesdk.utils.CreateThreadPool;
 import com.supoin.framesdk.utils.ScanUtil;
+import com.supoin.framesdk.utils.SoundUtil;
 import com.supoin.framesdk.widget.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -377,6 +378,7 @@ public abstract class BaseScanMDBillActivity extends AppCompatActivity implement
         dismissDialogSelect();
         dismissDialogText();
         createThreadPool.closeThreadPool();// 线程池关闭 不在接受新线程
+        SoundUtil.getInstance().releaseAllSound();
         // 结束Activity&从栈中移除该Activity
         BaseApplication.getInstance().finishActivity(this);
     }

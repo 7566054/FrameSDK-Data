@@ -18,6 +18,7 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.supoin.framesdk.R;
 import com.supoin.framesdk.R2;
 import com.supoin.framesdk.utils.CreateThreadPool;
+import com.supoin.framesdk.utils.SoundUtil;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -96,6 +97,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         dismissDialogSelect();
         dismissDialogText();
         createThreadPool.closeThreadPool();// 线程池关闭 不在接受新线程
+        SoundUtil.getInstance().releaseAllSound();
         BaseApplication.getInstance().finishActivity(this);
 
     }

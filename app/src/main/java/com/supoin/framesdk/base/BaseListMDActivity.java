@@ -21,6 +21,7 @@ import com.supoin.framesdk.R2;
 import com.supoin.framesdk.utils.CommUtil;
 import com.supoin.framesdk.utils.CreateThreadPool;
 import com.supoin.framesdk.utils.ScanUtil;
+import com.supoin.framesdk.utils.SoundUtil;
 import com.supoin.framesdk.widget.PullToRefreshListView;
 
 import butterknife.BindView;
@@ -186,6 +187,7 @@ public abstract class BaseListMDActivity extends AppCompatActivity implements Sc
         dismissDialogSelect();
         dismissDialogText();
         createThreadPool.closeThreadPool();// 线程池关闭 不在接受新线程
+        SoundUtil.getInstance().releaseAllSound();
         // 结束Activity&从栈中移除该Activity
         BaseApplication.getInstance().finishActivity(this);
     }

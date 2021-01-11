@@ -20,14 +20,59 @@ public class SoundUtil {
         return SystemSound.INSTANCE;
     }
 
+    MediaPlayer mSuccessPlayer = null;
+    MediaPlayer mFailPlayer = null;
+    MediaPlayer mScanExistPlayer = null;
+
     public void playSuccess(Context context){
-        MediaPlayer mMediaPlayer= MediaPlayer.create(context, R.raw.success);
-        mMediaPlayer.start();
+        if (mSuccessPlayer != null) {
+            mSuccessPlayer.stop();
+            mSuccessPlayer.release();
+            mSuccessPlayer = null;
+        }
+        mSuccessPlayer = MediaPlayer.create(context, R.raw.success);
+        mSuccessPlayer.start();
     }
 
     public void playFail(Context context){
-        MediaPlayer mMediaPlayer= MediaPlayer.create(context, R.raw.error);
-        mMediaPlayer.start();
+        if (mFailPlayer != null) {
+            mFailPlayer.stop();
+            mFailPlayer.release();
+            mFailPlayer = null;
+        }
+        mFailPlayer= MediaPlayer.create(context, R.raw.error);
+        mFailPlayer.start();
+    }
+
+    public void playScanExist(Context context){
+        if (mScanExistPlayer != null) {
+            mScanExistPlayer.stop();
+            mScanExistPlayer.release();
+            mScanExistPlayer = null;
+        }
+        mScanExistPlayer= MediaPlayer.create(context, R.raw.scannotexists);
+        mScanExistPlayer.start();
+    }
+
+    public void releaseAllSound(){
+        if (mSuccessPlayer != null) {
+            mSuccessPlayer.stop();
+            mSuccessPlayer.release();
+            mSuccessPlayer = null;
+        }
+
+        if (mFailPlayer != null) {
+            mFailPlayer.stop();
+            mFailPlayer.release();
+            mFailPlayer = null;
+        }
+
+        if (mScanExistPlayer != null) {
+            mScanExistPlayer.stop();
+            mScanExistPlayer.release();
+            mScanExistPlayer = null;
+        }
+
     }
 
 }
