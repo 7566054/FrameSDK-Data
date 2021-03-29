@@ -135,7 +135,7 @@ public abstract class FrameMainMenuActivity extends BaseActivity {
         if (KeyEvent.KEYCODE_BACK == keyCode) {
 
             if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
-                HomeProhibit();
+//                HomeProhibit();
                 finish();
                 BaseApplication.getInstance().finishAllActivity();
                 System.exit(0);

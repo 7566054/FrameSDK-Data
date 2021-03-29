@@ -51,7 +51,7 @@ public abstract class BaseMainActivity extends BaseActivity {
     @Override
     protected void loadData() {
         //禁止HOME键
-        onHomeProhibit();
+        //onHomeProhibit();
         if (!SDCardUtils.isSDCardEnableByEnvironment()) {
 
             showDialogText("未检测到手机内存卡", null);
