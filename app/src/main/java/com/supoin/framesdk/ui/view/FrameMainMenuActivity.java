@@ -31,6 +31,7 @@ public abstract class FrameMainMenuActivity extends BaseActivity {
      * 设置功能菜单的图标及名称，子类重写此方法
      */
     protected abstract void loadUI();
+    protected abstract void releaseUI();
 
     protected SlidingMenu sm_main;
     private RelativeLayout rl_main_bg;
@@ -136,6 +137,7 @@ public abstract class FrameMainMenuActivity extends BaseActivity {
 
             if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
 //                HomeProhibit();
+                releaseUI();
                 finish();
                 BaseApplication.getInstance().finishAllActivity();
                 System.exit(0);

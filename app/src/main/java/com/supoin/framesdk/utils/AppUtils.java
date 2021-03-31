@@ -1,15 +1,20 @@
 package com.supoin.framesdk.utils;
 
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.supoin.framesdk.R;
 import com.supoin.framesdk.base.BaseApplication;
 
 import java.io.File;
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.util.List;
 
 
 /**
@@ -147,5 +152,53 @@ public class AppUtils {
 		}
 
 		return value;
+	}
+
+	/**
+	 * 通知栏缩进
+	 *
+	 * @param context
+	 */
+	public static void collapseStatusBar(Context context) {
+		try {
+			Object statusBarManager = context.getSystemService("statusbar");
+			Method collapse;
+			if (Build.VERSION.SDK_INT <= 16) {
+				collapse = statusBarManager.getClass().getMethod("collapse");
+			} else {
+				collapse = statusBarManager.getClass().getMethod("collapsePanels");
+			}
+			collapse.invoke(statusBarManager);
+		} catch (Exception localException) {
+			localException.printStackTrace();
+		}
+	}
+
+	/**
+	 * 判断
+	 *
+	 * @param context
+	 * @return true 前台 false 后台
+	 */
+	public static boolean isForeground(Context context) {
+
+		// IMPORTANCE_BACKGROUND = 400后台
+		// IMPORTANCE_EMPTY = 500空进程
+		// IMPORTANCE_FOREGROUND = 100在屏幕最前端、可获取到焦点可理解为Activity生命周期的OnResume();
+		// IMPORTANCE_SERVICE = 300 在服务中
+		// IMPORTANCE_VISIBLE = 200 在屏幕前端、获取不到焦点可理解为Activity生命周期的OnStart();
+		ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+		List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
+		for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+			if (appProcess.processName.equals(context.getPackageName())) {
+				if (appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND || appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_SERVICE
+						|| appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_EMPTY) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }

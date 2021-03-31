@@ -11,4 +11,9 @@ public class MyMainMenu extends FrameMainMenuActivity {
     @Override
     protected void loadUI() {
     }
+
+    @Override
+    protected void releaseUI() {
+
+    }
 }
