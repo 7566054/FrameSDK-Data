@@ -73,6 +73,17 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="TextView_AutoScroll">
+        <item name="android:textColor">@color/theme</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+    </style>
+
     <style name="TextView_Gray">
         <item name="android:textColor">@color/theme_8f</item>
         <item name="android:textSize">@dimen/text_16</item>

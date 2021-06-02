@@ -82,7 +82,22 @@ public abstract class BaseApplication extends Application {
             //拷贝数据库到SD卡上
             CommUtil.getInstance().copyAssetsFile(this, "FrameSDK.db");
 
-            FrameGlobalVariable.DeviceID = Build.SERIAL;
+            //如果设备是android 10的，获取设备序列号要方式有改变，否则获取的序列号是为unknown
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q){
+                FrameGlobalVariable.DeviceID = CommUtil.getInstance().getProperty("vendor.gsm.serial", "");
+                if (FrameGlobalVariable.DeviceID.equals("")){
+                    FrameGlobalVariable.DeviceID = CommUtil.getInstance().getProperty("ro.serialno", "");
+                }
+
+                if (FrameGlobalVariable.DeviceID.length() >= 30){
+                    FrameGlobalVariable.DeviceID = FrameGlobalVariable.DeviceID.substring(0, 30);
+                }
+
+            }
+            else{
+                FrameGlobalVariable.DeviceID = Build.SERIAL;
+            }
+
             FrameGlobalVariable.IMEI = PhoneUtils.getIMEI();
             TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
             FrameGlobalVariable.IMEI = tm.getDeviceId();
