@@ -6,6 +6,7 @@ import android.app.Application;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Looper;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
@@ -83,24 +84,23 @@ public abstract class BaseApplication extends Application {
             CommUtil.getInstance().copyAssetsFile(this, "FrameSDK.db");
 
             //如果设备是android 10的，获取设备序列号要方式有改变，否则获取的序列号是为unknown
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q){
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
                 FrameGlobalVariable.DeviceID = CommUtil.getInstance().getProperty("vendor.gsm.serial", "");
-                if (FrameGlobalVariable.DeviceID.equals("")){
+                if (FrameGlobalVariable.DeviceID.equals("")) {
                     FrameGlobalVariable.DeviceID = CommUtil.getInstance().getProperty("ro.serialno", "");
                 }
 
-                if (FrameGlobalVariable.DeviceID.length() >= 30){
+                if (FrameGlobalVariable.DeviceID.length() >= 30) {
                     FrameGlobalVariable.DeviceID = FrameGlobalVariable.DeviceID.substring(0, 30);
                 }
 
-            }
-            else{
+                FrameGlobalVariable.IMEI =Settings.System.getString( getContentResolver(), Settings.Secure.ANDROID_ID);
+
+            } else {
                 FrameGlobalVariable.DeviceID = Build.SERIAL;
+                FrameGlobalVariable.IMEI = PhoneUtils.getIMEI();
             }
 
-            FrameGlobalVariable.IMEI = PhoneUtils.getIMEI();
-            TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-            FrameGlobalVariable.IMEI = tm.getDeviceId();
             FrameGlobalVariable.BrandName = Build.BRAND;
             FrameGlobalVariable.Manufacturer = Build.MANUFACTURER;
             FrameGlobalVariable.Model = Build.MODEL;
