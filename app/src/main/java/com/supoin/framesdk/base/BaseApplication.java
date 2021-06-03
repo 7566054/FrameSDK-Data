@@ -62,16 +62,8 @@ public abstract class BaseApplication extends Application {
             //FTP导出路径
             FrameGlobalVariable.exportPath = FrameGlobalVariable.projectPath + "/ExportDataFile/";
 
-            //初始化文件
-            initFile();
-            //初始化 导出数据
-            initExportData();
-            //初始化 崩溃日志
-            initCrash();
-            //系统日志实始化
-            initSystemLog();
-            //初始化数据库
-            initDatabase();
+            //App崩溃日志初始化
+            CrashUtils.init(FrameGlobalVariable.crashPath, crashListener);
 
             //获取内核版本的日期,大于2018-01时才调用扫描JAR包，否则程序会崩溃
             String coreDate = CommUtil.getInstance().getCoreDate();
@@ -94,10 +86,14 @@ public abstract class BaseApplication extends Application {
                     FrameGlobalVariable.DeviceID = FrameGlobalVariable.DeviceID.substring(0, 30);
                 }
 
-                FrameGlobalVariable.IMEI =Settings.System.getString( getContentResolver(), Settings.Secure.ANDROID_ID);
-
             } else {
                 FrameGlobalVariable.DeviceID = Build.SERIAL;
+            }
+
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                FrameGlobalVariable.IMEI =Settings.System.getString( getContentResolver(), Settings.Secure.ANDROID_ID);
+            }
+            else{
                 FrameGlobalVariable.IMEI = PhoneUtils.getIMEI();
             }
 
@@ -112,71 +108,6 @@ public abstract class BaseApplication extends Application {
         {
             LogUtils.e(ex);
         }
-    }
-
-
-    /**
-     * 初始化项目文件路径，更新文件路径
-     */
-    private void initFile(){
-        //文件目录初始化
-        File projectFile = new File(FrameGlobalVariable.projectPath);
-        if (!projectFile.exists())
-            projectFile.mkdirs();
-
-        File updateFile = new File(FrameGlobalVariable.updatePath);
-        if (!updateFile.exists())
-            updateFile.mkdirs();
-
-    }
-
-    /**
-     * 初始化异常日志
-     */
-    private void initCrash(){
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        File crashPath = new File(FrameGlobalVariable.crashPath);
-        if (!crashPath.exists())
-            crashPath.mkdirs();
-
-        //App崩溃日志初始化
-        //CrashUtils.init(FrameGlobalVariable.crashPath, crashListener);
-    }
-
-    /**
-     * 初始化系统日志
-     */
-    private void initSystemLog(){
-        File logPath = new File(FrameGlobalVariable.logPath);
-        if (!logPath.exists())
-            logPath.mkdirs();
-        LogUtils.Config config = LogUtils.getConfig();
-        config.setLog2FileSwitch(true);
-        config.setDir(FrameGlobalVariable.logPath);
-        config.setFilePrefix("supoin");
-        config.setLogSwitch(true);
-        config.setConsoleSwitch(false);
-        config.setSaveDays(15);
-    }
-
-    /**
-     * 初始化FTP导出文件路径
-     */
-    private void initExportData(){
-        File exportPath = new File(FrameGlobalVariable.exportPath);
-        if (!exportPath.exists())
-            exportPath.mkdirs();
-    }
-
-    /**
-     * 数据库初始化，默认自定义的文件位置
-     */
-    private void initDatabase(){
-        File dbPath = new File(FrameGlobalVariable.databasePath);
-        if (!dbPath.exists())
-            dbPath.mkdirs();
     }
 
     /**

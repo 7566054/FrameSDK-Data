@@ -83,5 +83,6 @@
     <string name="day_ago">天前</string>
 
     <string name="less_than_1KB">小于1KB</string>
+    <string name="on_permisson_read_write">没有读写本地文件的权限，APP无法正常运行。</string>
 
 </resources>

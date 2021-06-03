@@ -12,7 +12,6 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.SDCardUtils;
 import com.supoin.framesdk.R;
 import com.supoin.framesdk.configure.FrameGlobalConst;
-import com.supoin.framesdk.db.FrameDbBLL;
 
 
 public abstract class BaseMainActivity extends BaseActivity {

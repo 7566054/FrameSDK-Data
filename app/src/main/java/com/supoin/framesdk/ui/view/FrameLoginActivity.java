@@ -1,10 +1,12 @@
 package com.supoin.framesdk.ui.view;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -21,7 +23,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 import com.blankj.utilcode.util.KeyboardUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.NetworkUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.supoin.framesdk.R;
@@ -32,11 +37,13 @@ import com.supoin.framesdk.configure.FrameGlobalConst;
 import com.supoin.framesdk.configure.FrameGlobalVariable;
 import com.supoin.framesdk.utils.GlobalUtil;
 import com.supoin.framesdk.utils.IntegerUtils;
+import com.supoin.framesdk.utils.PermissionsUtil;
 import com.supoin.framesdk.utils.ScreenUtils;
 import com.supoin.framesdk.utils.StringUtils;
 import com.supoin.framesdk.widget.SlidingMenu;
 
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,6 +60,7 @@ public abstract class FrameLoginActivity extends BaseActivity {
     protected abstract void setLogoIcon(ImageView imageLogo);
     protected abstract void setBluePrint();
     protected abstract void initData();
+    protected abstract void createOrExistsDir();//外部自定义文件创建
 
     @BindView(R2.id.et_user_code)
     protected EditText editUser;
@@ -99,6 +107,26 @@ public abstract class FrameLoginActivity extends BaseActivity {
     @Override
     protected void loadData() {
 
+        //动态申请权限
+        if (Build.VERSION.SDK_INT >= 26 && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            PermissionsUtil.verifyStoragePermissions(this);
+        }
+        else{
+            //初始化文件
+            initFile();
+            //初始化 导出数据
+            initExportData();
+            //初始化 崩溃日志
+            initCrash();
+            //系统日志实始化
+            initSystemLog();
+            //初始化数据库
+            initDatabase();
+            //外部自定义文件创建
+            createOrExistsDir();
+        }
+
         setLogoIcon(imageLogo);
         initData();
         setBluePrint();
@@ -141,6 +169,92 @@ public abstract class FrameLoginActivity extends BaseActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //初始化文件
+                    initFile();
+                    //初始化 导出数据
+                    initExportData();
+                    //初始化 崩溃日志
+                    initCrash();
+                    //系统日志实始化
+                    initSystemLog();
+                    //初始化数据库
+                    initDatabase();
+                    //外部自定义文件创建
+                    createOrExistsDir();
+                } else {
+                    ToastUtils.showShort(R.string.on_permisson_read_write);
+                    finish();
+                    BaseApplication.getInstance().finishAllActivity();
+                    System.exit(0);
+                }
+                break;
+            default:
+        }
+    }
+
+    /**
+     * 初始化项目文件路径，更新文件路径
+     */
+    private void initFile(){
+        //文件目录初始化
+        File projectFile = new File(FrameGlobalVariable.projectPath);
+        if (!projectFile.exists())
+            projectFile.mkdirs();
+
+        File updateFile = new File(FrameGlobalVariable.updatePath);
+        if (!updateFile.exists())
+            updateFile.mkdirs();
+
+    }
+
+    /**
+     * 初始化FTP导出文件路径
+     */
+    private void initExportData(){
+        File exportPath = new File(FrameGlobalVariable.exportPath);
+        if (!exportPath.exists())
+            exportPath.mkdirs();
+    }
+
+    /**
+     * 数据库初始化，默认自定义的文件位置
+     */
+    private void initDatabase(){
+        File dbPath = new File(FrameGlobalVariable.databasePath);
+        if (!dbPath.exists())
+            dbPath.mkdirs();
+    }
+
+    /**
+     * 初始化异常日志
+     */
+    private void initCrash(){
+        File crashPath = new File(FrameGlobalVariable.crashPath);
+        if (!crashPath.exists())
+            crashPath.mkdirs();
+    }
+
+    /**
+     * 初始化系统日志
+     */
+    private void initSystemLog(){
+        File logPath = new File(FrameGlobalVariable.logPath);
+        if (!logPath.exists())
+            logPath.mkdirs();
+        LogUtils.Config config = LogUtils.getConfig();
+        config.setLog2FileSwitch(true);
+        config.setDir(FrameGlobalVariable.logPath);
+        config.setFilePrefix("supoin");
+        config.setLogSwitch(true);
+        config.setConsoleSwitch(false);
+        config.setSaveDays(15);
     }
 
     private void showHisName() {
