@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">通用框架</string>
+
+    <!-- 弹出窗体 -->
+    <string name="ok">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="dialog_title">Prompt</string>
+
+    <!-- 登录 -->
+    <string name="login">Login</string>
+    <string name="setting">Setting</string>
+    <string name="hint_password">Please enter password</string>
+    <string name="hint_user">Please enter user name</string>
+    <string name="no_loginname_history">No login history</string>
+    <string name="history_loginname">Last login name</string>
+
+    <!-- 主界面 -->
+    <string name="menu_in">入库</string>
+    <string name="menu_out">出库</string>
+    <string name="menu_check">盘点</string>
+
+    <!-- 系统更新 -->
+    <string name="version_update">The system needs to be updated. Do you want to update now?</string>
+    <string name="version_downloading">Please wait while the version is downloaded</string>
+    <string name="version_network_timeout">Networking timeout</string>
+    <string name="version_fail_network">Network connection failed, you can continue to try to report</string>
+    <string name="version_error">Error:</string>
+    <string name="version_download_failed">Download failed</string>
+    <string name="version_error_reply_msg">Error parsing server response message</string>
+
+    <!--  列表基类控件 -->
+    <string name="list_new">New</string>
+    <string name="list_empty_data">No data</string>
+    <string name="add">Add</string>
+
+    <!--  扫描基类控件 -->
+    <string name="title_1">Title 1:</string>
+    <string name="title_2">Title 2:</string>
+    <string name="btn_1">Button 1</string>
+    <string name="btn_2">Button 2</string>
+    <string name="btn_3">Button 3</string>
+    <string name="more">More</string>
+    <string name="billno">Bill</string>
+    <string name="detail">Detail</string>
+
+    <!--注册-->
+    <string name="register_input">Please enter the registration code</string>
+    <string name="register_sucess">register successed!</string>
+    <string name="register_fail">register failed!</string>
+    <string name="register_input_correct">Please enter the correct registration code!</string>
+    <string name="register">Register</string>
+    <string name="register_device">Equipment No.:</string>
+    <string name="register_pwd">Registration code:</string>
+    <string name="register_solve">* Please give the equipment No. to the customer service staff of XiaoBang</string>
+
+    <!-- FTP设置 -->
+    <string name="ftp_storage_warning">External storage not available</string>
+    <string name="ftp_no_wifi_hint">No WiFi network, click to view WiFi settings</string>
+    <string name="ftp_start_server">Start the service</string>
+    <string name="ftp_stop_server">Stop the service</string>
+    <string name="ftp_no_wifi">No WiFi network</string>
+    <string name="ftp_wifi_state">WLAN status</string>
+    <string name="ftp_instruction_pre">After startup, you can obtain the inventory file remotely from the computer</string>
+    <string name="ftp_instruction">Please enter in the "my computer" address bar:</string>
+
+    <!-- 弹出对话框 -->
+    <string name="asking_for">Requesting</string>
+
+    <!-- 刷新控件 -->
+    <string name="pull_to_refresh_pull_label">Refresh after drop down…</string>
+    <string name="pull_to_refresh_release_label">Let go to refresh…</string>
+    <string name="pull_to_refresh_refreshing_label">Refreshing…</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">Pull up to load more…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">Release loading data…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">Loading data…</string>
+    <string name="unknown_time">Before unknown time</string>
+    <string name="just_now">Just</string>
+    <string name="second_ago">Seconds ago</string>
+    <string name="min_ago">Minutes ago</string>
+    <string name="hour_ago">Hours ago</string>
+    <string name="day_ago">Days ago</string>
+
+    <string name="less_than_1KB">Less than 1KB</string>
+    <string name="on_permisson_read_write">Without the permission to read and write local files, the app cannot run normally.</string>
+
+</resources>
