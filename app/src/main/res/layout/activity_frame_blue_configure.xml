@@ -85,7 +85,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="搜索" />
+            android:text="@string/search" />
 
         <Button
             android:id="@+id/btn_pair"
@@ -94,7 +94,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="配对" />
+            android:text="@string/pair" />
 
         <Button
             android:id="@+id/btn_unpair"
@@ -103,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="解绑" />
+            android:text="@string/unbinding" />
 
         <Button
             android:id="@+id/btn_test"
@@ -112,7 +112,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="测试" />
+            android:text="@string/test" />
 
 
 

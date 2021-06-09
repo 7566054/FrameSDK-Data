@@ -81,6 +81,42 @@
     <string name="min_ago">分钟前</string>
     <string name="hour_ago">小时前</string>
     <string name="day_ago">天前</string>
+    <string name="detailed_list">明细单</string>
+    <string name="details">详情</string>
+    <string name="loading_error_">加载页面出错！原因：</string>
+    <string name="app_abnormal_exit">很抱歉,程序出现异常,即将退出.</string>
+    <string name="set_resource_file_id">请设置单据布局资源文件id.</string>
+    <string name="click_again_exit">再点一次退出！</string>
+    <string name="supoin_app">销邦系统</string>
+    <string name="network_is_wrong">您的网络有问题，请检查网络连接！</string>
+    <string name="user_empty">用户名不能为空</string>
+    <string name="password_empty">密码不能为空</string>
+    <string name="ftp_start_error_">FTP启动出现错误，原因：</string>
+    <string name="bluetooth_configuration">蓝牙配置</string>
+    <string name="select_connect_blue_printer">请选择连接的蓝牙打印机</string>
+    <string name="paired">已配对</string>
+    <string name="pairing_failed">配对失败！</string>
+    <string name="pairing_successful">配对成功！</string>
+    <string name="unbinding_succeeded">解绑成功</string>
+    <string name="unbinding_failed">解绑失败</string>
+    <string name="see_big_picture">查看大图</string>
+    <string name="transfer_big_picture">请传输需要放大的图片</string>
+    <string name="prompt_message_">提示信息...</string>
+    <string name="confirm">确定</string>
+    <string name="tips">提示</string>
+    <string name="submitted_or_voided">已提交或已作废</string>
+    <string name="total_">合计：</string>
+    <string name="input_qty">请输入数量</string>
+    <string name="print_name">打印机名称</string>
+    <string name="state">状态</string>
+    <string name="search">搜索</string>
+    <string name="pair">配对</string>
+    <string name="unbinding">解绑</string>
+    <string name="test">测试</string>
+    <string name="barcode_">条码：</string>
+    <string name="import_pre_scan">从预扫描中导入</string>
+
+
 
     <string name="less_than_1KB">小于1KB</string>
     <string name="on_permisson_read_write">没有读写本地文件的权限，APP无法正常运行。</string>

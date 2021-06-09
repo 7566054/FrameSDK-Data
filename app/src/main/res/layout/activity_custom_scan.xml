@@ -15,7 +15,7 @@
             style="@style/TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="条码："/>
+            android:text="@string/barcode_"/>
 
         <EditText
             android:id="@+id/et_barcode"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_margin"
-            android:text="确定"
+            android:text="@string/confirm"
             />
 
 
@@ -55,7 +55,7 @@
             android:textSize="@dimen/dimen_18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="从预扫描中导入"
+            android:text="@string/import_pre_scan"
             />
 
     </LinearLayout>

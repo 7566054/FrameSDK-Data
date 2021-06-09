@@ -10,7 +10,7 @@
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:background="#F5F5F5"
-        android:text="确认"
+        android:text="@string/confirm"
         android:textColor="#333333"
         android:textSize="14sp"
         android:visibility="gone" />
@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/dimen_10"
         android:padding="@dimen/dimen_30"
-        android:text="提示信息..."
+        android:text="@string/prompt_message_"
         android:textColor="#333333" />
 
     <ImageView

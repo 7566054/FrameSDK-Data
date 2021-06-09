@@ -23,7 +23,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:textColor="#FFFFFF"
-                android:text="提示"
+                android:text="@string/tips"
                 android:textSize="@dimen/dimen_20"
                 android:textStyle="bold" />
         </RelativeLayout>

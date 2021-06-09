@@ -54,7 +54,7 @@ public abstract class FrameMainMenuActivity extends BaseActivity {
      */
     @Override
     protected void initView() {
-        setTileText("销邦系统");
+        setTileText(getString(R.string.supoin_app));
         sm_main = findViewById(R.id.sm_main);
         ll_homepage_main = findViewById(R.id.ll_homepage_main);
         ll_homepage_menu = findViewById(R.id.ll_homepage_menu);
@@ -142,7 +142,7 @@ public abstract class FrameMainMenuActivity extends BaseActivity {
                 BaseApplication.getInstance().finishAllActivity();
                 System.exit(0);
             } else {
-                Toast.makeText(getBaseContext(), "再点一次退出!",
+                Toast.makeText(getBaseContext(), getString(R.string.click_again_exit),
                         Toast.LENGTH_SHORT).show();
                 back_pressed = System.currentTimeMillis();
                 return false;

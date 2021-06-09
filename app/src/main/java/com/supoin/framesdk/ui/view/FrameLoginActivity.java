@@ -383,16 +383,16 @@ public abstract class FrameLoginActivity extends BaseActivity {
 //            return;
 //        }
         if (!NetworkUtils.isConnected()){
-            ToastUtils.showShort("您的网络有问题，请检查网络连接！");
+            ToastUtils.showShort(getString(R.string.network_is_wrong));
             return;
         }
         if (editUser.getText().toString().trim().length() == 0) {
-            ToastUtils.showShort("用户名不能为空");
+            ToastUtils.showShort(getString(R.string.user_empty));
             return;
         }
 
         if (editPassword.getText().toString().trim().length() == 0) {
-            ToastUtils.showShort("用户名不能为空");
+            ToastUtils.showShort(getString(R.string.password_empty));
             return;
         }
 
@@ -416,7 +416,7 @@ public abstract class FrameLoginActivity extends BaseActivity {
                 BaseApplication.getInstance().finishAllActivity();
                 System.exit(0);
             } else {
-                Toast.makeText(getBaseContext(), "再点一次退出!",
+                Toast.makeText(getBaseContext(), getString(R.string.click_again_exit),
                         Toast.LENGTH_SHORT).show();
                 back_pressed = System.currentTimeMillis();
                 return false;

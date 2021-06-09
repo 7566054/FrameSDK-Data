@@ -1,27 +1,22 @@
 package com.supoin.framesdk.base;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.Application;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Looper;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.widget.Toast;
-
-import androidx.core.app.ActivityCompat;
 
 import com.android.scanner.impl.ReaderManager;
 import com.blankj.utilcode.util.CrashUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.PhoneUtils;
 import com.blankj.utilcode.util.SDCardUtils;
+import com.supoin.framesdk.R;
 import com.supoin.framesdk.configure.FrameGlobalVariable;
 import com.supoin.framesdk.db.DBFrameHelper;
 import com.supoin.framesdk.utils.CommUtil;
 
-import java.io.File;
 import java.util.Stack;
 
 
@@ -160,7 +155,7 @@ public abstract class BaseApplication extends Application {
                     public void run() {
                         Looper.prepare();
                         e.printStackTrace();
-                        Toast.makeText(getApplicationContext(), "很抱歉,程序出现异常,即将退出.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.app_abnormal_exit), Toast.LENGTH_LONG).show();
                         Looper.loop();
                     }
                 }.start();

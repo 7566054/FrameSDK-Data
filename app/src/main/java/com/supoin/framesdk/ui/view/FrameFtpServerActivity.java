@@ -112,7 +112,7 @@ public class FrameFtpServerActivity extends BaseActivity {
                 flag =true;
             }
         }catch (Exception ex){
-            ToastUtils.showShort("FTP启动出现错误，原因：" + ex.getMessage());
+            ToastUtils.showShort(getString(R.string.ftp_start_error_) + ex.getMessage());
         }
     }
 

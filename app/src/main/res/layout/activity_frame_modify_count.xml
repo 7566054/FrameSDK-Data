@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:gravity="start|center"
             android:inputType="number"
-            android:hint="请输入数量"
+            android:hint="@string/input_qty"
             android:maxLength="6"
             android:maxLines="1" />
 

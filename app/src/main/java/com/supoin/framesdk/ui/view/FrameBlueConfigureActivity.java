@@ -47,7 +47,7 @@ public class FrameBlueConfigureActivity extends BaseActivity implements Bluetoot
      */
     @Override
     protected void initView() {
-        setTileText("蓝牙配置");
+        setTileText(getString(R.string.bluetooth_configuration));
         bluetoothService = new BluetoothService(this, this);
     }
 
@@ -79,7 +79,7 @@ public class FrameBlueConfigureActivity extends BaseActivity implements Bluetoot
             bluetoothService.pairBluetooth(selectMainEntity.getBluetoothAddress());
         }
         else{
-            ToastUtils.showShort("请选择连接的蓝牙打印机");
+            ToastUtils.showShort(getString(R.string.select_connect_blue_printer));
         }
     }
 
@@ -90,7 +90,7 @@ public class FrameBlueConfigureActivity extends BaseActivity implements Bluetoot
             bluetoothService.unpairDevice(selectMainEntity.getBluetoothAddress());
         }
         else{
-            ToastUtils.showShort("请选择连接的蓝牙打印机");
+            ToastUtils.showShort(getString(R.string.select_connect_blue_printer));
         }
     }
 
@@ -110,12 +110,12 @@ public class FrameBlueConfigureActivity extends BaseActivity implements Bluetoot
         if (selectMainEntity != null)
         {
             if (isPair) {
-                selectMainEntity.setPairedStatus("已配对");
+                selectMainEntity.setPairedStatus(getString(R.string.paired));
                 adapterData.notifyDataSetChanged();
-                ToastUtils.showShort("已配对成功");
+                ToastUtils.showShort(getString(R.string.pairing_successful));
             }
             else {
-                ToastUtils.showShort("已配对失败!");
+                ToastUtils.showShort(getString(R.string.pairing_failed));
             }
         }
     }
@@ -127,10 +127,10 @@ public class FrameBlueConfigureActivity extends BaseActivity implements Bluetoot
             if (isUnPair) {
                 selectMainEntity.setPairedStatus("");
                 adapterData.notifyDataSetChanged();
-                ToastUtils.showShort("解绑成功");
+                ToastUtils.showShort(getString(R.string.unbinding_succeeded));
             }
             else {
-                ToastUtils.showShort("解绑失败");
+                ToastUtils.showShort(getString(R.string.pairing_failed));
             }
         }
     }

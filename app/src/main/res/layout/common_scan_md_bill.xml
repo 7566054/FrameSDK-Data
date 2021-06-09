@@ -36,7 +36,7 @@
             android:layout_toEndOf="@id/tv_billType"
             android:background="@drawable/selector_tv_border_red"
             android:padding="@dimen/dimen_2"
-            android:text="已提交或已作废"
+            android:text="@string/submitted_or_voided"
             android:textColor="@color/red"
             android:textSize="@dimen/text_14"
             android:visibility="gone"

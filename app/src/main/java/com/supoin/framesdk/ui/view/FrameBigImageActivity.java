@@ -35,14 +35,14 @@ public class FrameBigImageActivity extends BaseActivity {
      */
     @Override
     protected void initView() {
-        setTileText("查看大图");
+        setTileText(getString(R.string.see_big_picture));
     }
 
     @Override
     protected void loadData() {
         Bitmap bitmap = getIntent().getParcelableExtra(FrameGlobalConst.KEY_BIGIMAGE);
         if (bitmap != null){
-            ToastUtils.showShort("请传输需要放大的图片");
+            ToastUtils.showShort(getString(R.string.transfer_big_picture));
             return;
         }
         mIvBigImage.setImageBitmap(bitmap);

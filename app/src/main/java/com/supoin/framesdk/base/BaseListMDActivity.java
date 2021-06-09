@@ -127,7 +127,7 @@ public abstract class BaseListMDActivity extends AppCompatActivity implements Sc
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         }
         catch (Exception ex) {
-            ToastUtils.showShort("加载页面出错！原因："+ex.getMessage());
+            ToastUtils.showShort(getString(R.string.loading_error_)+ex.getMessage());
         }
     }
 

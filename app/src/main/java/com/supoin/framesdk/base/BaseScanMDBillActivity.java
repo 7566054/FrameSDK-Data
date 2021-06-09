@@ -157,7 +157,7 @@ public abstract class BaseScanMDBillActivity extends AppCompatActivity implement
             int customScanLayoutId = getCustomScanLayoutId();
             int customBillLayoutId = getCustomBillLayoutId();
             if(customBillLayoutId==0){
-                ToastUtils.showShort("请设置单据布局资源文件id！");
+                ToastUtils.showShort(getString(R.string.set_resource_file_id));
                 return;
             }
 
@@ -222,7 +222,7 @@ public abstract class BaseScanMDBillActivity extends AppCompatActivity implement
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         }
         catch (Exception ex) {
-            ToastUtils.showShort("加载页面出错！原因："+ex.getMessage());
+            ToastUtils.showShort(getString(R.string.loading_error_) + ex.getMessage());
         }
     }
 
@@ -269,14 +269,14 @@ public abstract class BaseScanMDBillActivity extends AppCompatActivity implement
             tv_billno.setTextColor(getResources().getColor(R.color.theme));
             tv_detail.setTextColor(getResources().getColor(R.color.white));
             vp_guider.setCurrentItem(tag);
-            tv_billType.setText(billTypeName == null ? "" : billTypeName + "详情");
+            tv_billType.setText(billTypeName == null ? "" : billTypeName + getString(R.string.details));
         } else {
             tv_billno.setBackgroundColor(getResources().getColor(R.color.transparent));
             tv_detail.setBackgroundColor(getResources().getColor(R.color.white));
             tv_billno.setTextColor(getResources().getColor(R.color.white));
             tv_detail.setTextColor(getResources().getColor(R.color.theme));
             vp_guider.setCurrentItem(tag);
-            tv_billType.setText(billTypeName == null ? "" : billTypeName + "明细单");
+            tv_billType.setText(billTypeName == null ? "" : billTypeName + getString(R.string.detailed_list));
         }
 
     }
